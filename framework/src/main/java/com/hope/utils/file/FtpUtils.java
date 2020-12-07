@@ -11,7 +11,7 @@ public class FtpUtils {
     /**
      * ftp服务器地址
      */
-    public String hostname = "47.113.82.12";
+    public String hostname = "";
     /**
      * ftp服务器端口号默认为21
      */
@@ -19,11 +19,11 @@ public class FtpUtils {
     /**
      * ftp登录账号
      */
-    public String username = "uploadFtpUser";
+    public String username = "";
     /**
      * ftp登录密码
      */
-    public String password = "eE7EZTkfKpX7GmR5";
+    public String password = "";
 
     public FTPClient ftpClient = null;
 
