@@ -114,9 +114,20 @@ public class Constants {
     public static final String RESOURCE_PREFIX = "/profile";
 
     /**
-     * 资源服务器路径
+     * 资源服务搭建：https://juejin.cn/post/6844903892073840653
+     * 资源服务器路径(nginx代理访问资源服务图片的地址 举例：访问ftp.aodeng.cc代理(nginx)到linux服务器/var/ftp/hope目录下)
      */
-    public static final String RESOURCE_SERVER_PATH = "http://47.113.82.12:8002";
+    public static final String RESOURCE_SERVER_PATH = "http://ftp.aodeng.cc:8002";
+
+    /**
+    * ftp搭建：https://cloud.tencent.com/document/product/213/10912
+    * ftp配置：默认上传路径 服务器地址 登录账号 登录密码 端口号(默认21)
+    */
+    public static final String FTP_DEFAULT_BASE_DIR="/var/ftp/hope";
+    public static final String FTP_HOSTNAME="";
+    public static final String FTP_USERNAME="ftpuseraodeng";
+    public static final String FTP_PASSWORD="ftpuseraodeng";
+    public static final Integer FTP_PORT=21;
 
     /**
      * 登录成功用户token-redis保存用户信息有效期（天）
