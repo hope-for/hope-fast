@@ -14,7 +14,7 @@ spring:
   #数据库配置
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/DeviceDB?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: root
       type: com.alibaba.druid.pool.DruidDataSource

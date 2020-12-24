@@ -1,7 +1,7 @@
 spring:
   datasource:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://47.106.252.58:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT
+      url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: root
   flyway:
