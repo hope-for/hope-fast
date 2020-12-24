@@ -19,7 +19,7 @@ import java.util.Map;
  **/
 @RestController
 @Slf4j
-public class UserController {
+public class TestController {
 
     @Autowired
     private ISysUserService iSysUserService;
@@ -31,6 +31,8 @@ public class UserController {
         return "1";
     }
 
+
+    /*一下为模拟接口数据 不关联数据库*/
     @RequestMapping("passPCApi/order/orderCount")
     public AjaxResult test1(String token){
         Map<String,Object> map=new HashMap<String,Object>(16);
