@@ -7,7 +7,7 @@
 
    * [http://www.ztree.me/v3/api.php zTree v3.0 API 文档]
 
-   * [http://www.ztree.me/v3/demo.php#_101 zTree v3.0 Demo 演示]
+   * [http://www.ztree.me/v3/demo.php#_101 zTree v3.0 Demo 设备]
 
    * [http://www.ztree.me/v3/faq.php#_101 zTree v3.0 常见问题]
 
@@ -32,7 +32,7 @@
    * 【修改】异步加载时 拼接参数的方法，由 string 修改为 json 对象
    * 【修正】1-2-3 3级节点时，如果 2级节点 全部设置为 nocheck 或 chkDisabled后，勾选3级节点时，1级节点的半勾选状态错误的 bug
    * 【修改】Demo: checkbox_nocheck.html & checkbox_chkDisabled.html;
-   * 【修改】Demo: edit_super.html，增加 showRenameBtn & showRemoveBtn 的演示
+   * 【修改】Demo: edit_super.html，增加 showRenameBtn & showRemoveBtn 的设备
    * 【修改】Demo: asyncForAll, 将 post 修改为 get；为了避免由于 IE10 的 bug 造成的客户端 以及 服务端崩溃
       IE10 ajax Post 无法提交参数的bug (http://bugs.jquery.com/ticket/12790)
 

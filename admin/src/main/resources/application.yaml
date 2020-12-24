@@ -1,5 +1,5 @@
 server:
-  port: 8886
+  port: 8888
   tomcat:
       uri-encoding: utf-8
   # HTTP请求和响应头的最大量，以字节为单位，默认值为4096字节,超过此长度的部分不予处理,一般8K。解决java.io.EOFException: null问题
@@ -11,6 +11,7 @@ spring:
     name: hope-admin
   profiles:
     active: dev
+  #数据库配置
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://localhost:3306/DeviceDB?useUnicode=true&characterEncoding=UTF-8&useSSL=false
@@ -32,16 +33,19 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  #模板引擎配置
   thymeleaf:
     # 配置thymeleaf修改页面不重启生效
     cache: false
     encoding: utf-8
     mode: LEGACYHTML5
 
+#mybatis
 mybatis:
     type-aliases-package: com.hope.model.bean
     mapper-locations: classpath:mapper/*.xml
 
+#日志
 logging:
     file: ./logs/log.log
     level:
@@ -49,6 +53,7 @@ logging:
       org.springframework: WARN
       com.baomidou.mybatisplus.samples.quickstart: debug
 
+#阿里云短信接入配置
 sms:
   accessKeyId:
   accessKeySecret:

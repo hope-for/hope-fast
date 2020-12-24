@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>云天设备管理系统-登录</title>
+    <title>后台管理系统-登录</title>
     <meta name="keywords" content="个人博客：http://ilovey.live">
     <meta name="description" content="微信公众号：低调小熊猫">
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
@@ -31,7 +31,7 @@
         <div class="row" style="border-radius: 6px;background: #fff;width: 680px;padding: 25px 20px 5px 10px;">
             <div class="col-sm-8"><!--action="" method="post"-->
                 <form  id="HopeLogin" class="login-form">
-                    <h3 class="no-margins" style="text-align:center">云天设备管理系统</h3>
+                    <h3 class="no-margins" style="text-align:center">后台管理系统</h3>
                     账号：<input type="text"  class="form-control uname " placeholder="用户名" name="phoneNumber" />
                     <br/>
                     密码：<input type="password" class="form-control pword m-b" placeholder="密码" name="passWord"/>
@@ -66,6 +66,9 @@
                         <strong style="color: rgb(0, 153, 255); font-weight: 700; text-align: center; font-size: 18px; min-width: 150px;">
                         扫码注册
                         </strong>
+<!--                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-home"></use>
+                        </svg>-->
                     </h4>
                     <!--<ul class="m-b">
                         <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> SpringBoot</li>
@@ -121,7 +124,6 @@
             url:"passPCApi/login/pwdLogin",
             data: $(".login-form").serialize(),
             dataType: "json",
-            //cache:false,
             success: function(data) {
                 if (data.code == 200) {
                     layer.msg(data.msg);
@@ -130,14 +132,13 @@
                     localStorage.setItem('loginData', JSON.stringify(data));//set对象
                     var json = JSON.parse(localStorage.getItem('loginData'));//get对象
                     console.log(json.data.token);//get属性
-                    window.location.href="/common/index";//跳转到首页
+                    window.location.href="/";//跳转到首页
                 }else if (data.code ==400){
                     layer.msg("<em style='color:red'>"+data.msg+"</em>", {
                         icon: 2,
                         offset: '30%',
                         time: 2000
                     });
-                    /*$(".imgcode").click();*/
                 }
             }
         });
