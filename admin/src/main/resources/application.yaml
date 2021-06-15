@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8080
   tomcat:
       uri-encoding: utf-8
   # HTTP请求和响应头的最大量，以字节为单位，默认值为4096字节,超过此长度的部分不予处理,一般8K。解决java.io.EOFException: null问题
@@ -59,3 +59,14 @@ sms:
   accessKeySecret:
   templateCode:
   signName:
+
+#第三方登录配置 去对应的第三方创建应用 本地测试开内网穿透
+justauth:
+  enabled: true
+  type:
+    GITEE:
+      client-id:
+      client-secret:
+      redirect-uri: http://aodeng.cn1.utools.club/oauth/gitee/callback
+  cache:
+    type: default
