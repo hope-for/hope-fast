@@ -6,6 +6,10 @@ server:
   max-http-header-size: 8192
   use-forward-headers: true
 
+#文件上传
+web:
+  upload-path: C:/data_image/
+
 spring:
   application:
     name: hope-admin
@@ -39,6 +43,10 @@ spring:
     cache: false
     encoding: utf-8
     mode: LEGACYHTML5
+  #配置自定义静态文件的位置
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+
 
 #mybatis
 mybatis:

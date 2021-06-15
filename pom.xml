@@ -136,7 +136,7 @@
                 <version>3.17</version>
             </dependency>
 
-            <!-- kaptcha -->
+            <!-- kaptcha 验证码 -->
             <dependency>
                 <groupId>com.github.penggle</groupId>
                 <artifactId>kaptcha</artifactId>
