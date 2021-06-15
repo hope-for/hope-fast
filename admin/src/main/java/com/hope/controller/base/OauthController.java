@@ -56,7 +56,7 @@ public class OauthController {
 
     @RequestMapping("/demo")
     public AjaxResult demo() {
-        return AjaxResult.success("Gitee","http://aodeng.cn1.utools.club/oauth/login/gitee");
+        return AjaxResult.success("Gitee","http://aodeng.cn1.utools.club/oauth/login/GITEE");
     }
 
 }
