@@ -29,9 +29,3 @@ hope-fast 使用  MIT 协议开源
 ### 联系
 
 ![微信图片_20200329114547](http://image.ilovey.live/image/0d6ff0bf2d7d51cc9839bd17c7c9b746.png)
-
-### 捐赠
-
-如果 hope-fast 对你有帮助，可以请作者吃个肉夹馍 :)
-
-![](https://i.loli.net/2018/12/31/5c29d3b18826d.png)
