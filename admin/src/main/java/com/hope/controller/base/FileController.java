@@ -83,7 +83,6 @@ public class FileController {
             // 返回上传文件的访问路径
             String filePath = request.getScheme() + "://" + request.getServerName()
                     + ":" + request.getServerPort()  +"/"+ format +"/"+ newName;
-            //实际可以把保存地址 文件类型存数据库 文件迁移 只需复制服务器文件夹
             //...
             return filePath;
         } catch (IOException e) {

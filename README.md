@@ -2,10 +2,10 @@
 
 - springboot框架版本：2.1.8.RELEASE
 - 没有权限依赖，没有过度封装，内置hplus前端ui框架，却丝毫不影响前后端分离
-- 主流rest/restful风格接口，全局异常，验证码，excel导出，FTP文件上传等基础功能
+- 主流rest/restful风格接口，全局异常，验证码，excel导出，FTP文件上传,文件上传本地存储等基础功能
 - 数据库变更版本控制工具flyway
-- 工具类库hutool
-- mybatis-plus
+- 工具类库hutool 版本：5.6.5
+- mybatis-plus 版本：3.2.0
 - 第三方授权登录的工具类库JustAuth
 - 阿里云短信接口
 - 微信相关：根据code获取微信小程序用户openid，session_key 解密小程序用户手机号

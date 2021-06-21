@@ -20,7 +20,6 @@
     <!--开发者信息-->
     <developers>
         <developer>
-            <id>aodeng</id>
             <name>低调小熊猫</name>
             <email>java@aodeng.cc</email>
             <url>https://github.com/java-aodeng</url>
@@ -150,6 +149,13 @@
                 <version>1.65</version>
             </dependency>
 
+            <!-- oauth springboot第三方授权登录-->
+            <dependency>
+                <groupId>com.xkcoding.justauth</groupId>
+                <artifactId>justauth-spring-boot-starter</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -167,13 +173,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-
-        <!-- oauth springboot第三方授权登录-->
-        <dependency>
-            <groupId>com.xkcoding.justauth</groupId>
-            <artifactId>justauth-spring-boot-starter</artifactId>
-            <version>1.4.0</version>
         </dependency>
 
     </dependencies>
