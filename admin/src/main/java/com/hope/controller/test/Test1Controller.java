@@ -1,4 +1,4 @@
-package com.hope.controller;
+package com.hope.controller.test;
 
 /**
  * @className: StudyController

@@ -27,21 +27,24 @@ import java.util.UUID;
  * @author aodeng
  */
 @RestController
-@RequestMapping("file")
-public class FileController {
+@RequestMapping("fileUpload")
+public class FileUploadController {
 
-    /** logger */
-    private static final Logger logger = LoggerFactory.getLogger(FileController.class);
+    /**
+     * logger
+     */
+    private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
 
     //绑定文件上传路径到uploadPath
     @Value("${web.upload-path}")
     private String uploadPath;
 
     /**
-    * 文件上传FTP
-    * @author aodeng
-    */
-    @PostMapping("/uploadFileFTP")
+     * 文件上传FTP
+     *
+     * @author aodeng
+     */
+    @PostMapping("/uploadFileToFTP")
     @ResponseBody
     public AjaxResult uploadFileFTP(MultipartFile file) throws IOException {
         if (!file.isEmpty()) {
@@ -59,11 +62,12 @@ public class FileController {
 
     /**
      * 文件上传本地存储
+     *
      * @param file
      * @param request
      * @return
      */
-    @PostMapping("/uploadLocal")
+    @PostMapping("/uploadToLocal")
     public String upload(MultipartFile file,
                          HttpServletRequest request) {
         String format = DateUtil.format(new Date(), "yyyy/MM/dd");
@@ -82,7 +86,7 @@ public class FileController {
 
             // 返回上传文件的访问路径
             String filePath = request.getScheme() + "://" + request.getServerName()
-                    + ":" + request.getServerPort()  +"/"+ format +"/"+ newName;
+                    + ":" + request.getServerPort() + "/" + format + "/" + newName;
             //...
             return filePath;
         } catch (IOException e) {

@@ -9,6 +9,8 @@
 - 第三方授权登录的工具类库JustAuth
 - 阿里云短信接口
 - 微信相关：根据code获取微信小程序用户openid，session_key 解密小程序用户手机号
+- 优雅关闭 Spring Boot 应用
+- 又拍云SDK集成
 
 <h1 align="center"><a href="https://github.com/java-aodeng" target="_blank">hope-fast</a></h1>
 

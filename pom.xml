@@ -156,6 +156,13 @@
                 <version>1.4.0</version>
             </dependency>
 
+            <!-- 又拍云存储 Java SDK -->
+            <dependency>
+                <groupId>com.upyun</groupId>
+                <artifactId>java-sdk</artifactId>
+                <version>4.2.3</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -175,5 +182,9 @@
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 </project>

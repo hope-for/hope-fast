@@ -2,13 +2,15 @@ server:
   port: 8080
   tomcat:
       uri-encoding: utf-8
+      #指定文件上传服务器临时目录，避免服务器自动清理目录的问题 “.”表示项目启动目录
+      basedir: ${hope.work-dir}
   # HTTP请求和响应头的最大量，以字节为单位，默认值为4096字节,超过此长度的部分不予处理,一般8K。解决java.io.EOFException: null问题
   max-http-header-size: 8192
   use-forward-headers: true
 
 #文件上传
 web:
-  upload-path: C:/data_image/
+  upload-path: ${hope.work-dir}/hope_images/
 
 spring:
   application:
@@ -18,7 +20,8 @@ spring:
   #数据库配置
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      #url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://39.99.190.224:3306/yt-devicedb-test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: root
       type: com.alibaba.druid.pool.DruidDataSource
@@ -30,10 +33,10 @@ spring:
   # Redis
   redis:
       database: 12
-      host: localhost
+      host: 39.99.190.224
       port: 6379
       #密码默认为空，注释即可，要添加密码，去掉注释添加就行
-      password:
+      #password:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
@@ -47,7 +50,6 @@ spring:
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
 
-
 #mybatis
 mybatis:
     type-aliases-package: com.hope.model.bean
@@ -55,7 +57,7 @@ mybatis:
 
 #日志
 logging:
-    file: ./logs/log.log
+    file: ${hope.work-dir}/logs/log.log
     level:
       com.hope: DEBUG
       org.springframework: WARN
@@ -78,3 +80,6 @@ justauth:
       redirect-uri: http://aodeng.cn1.utools.club/oauth/gitee/callback
   cache:
     type: default
+
+hope:
+    work-dir: ${user.home}/.hope/
