@@ -10,7 +10,7 @@ server:
 
 #文件上传
 web:
-  upload-path: ${hope.work-dir}/hope_images/
+  upload-path: ${hope.work-dir}/images/
 
 spring:
   application:
@@ -20,8 +20,7 @@ spring:
   #数据库配置
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      #url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-      url: jdbc:mysql://39.99.190.224:3306/yt-devicedb-test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: root
       type: com.alibaba.druid.pool.DruidDataSource
@@ -33,7 +32,7 @@ spring:
   # Redis
   redis:
       database: 12
-      host: 39.99.190.224
+      host: localhost
       port: 6379
       #密码默认为空，注释即可，要添加密码，去掉注释添加就行
       #password:
@@ -57,7 +56,8 @@ mybatis:
 
 #日志
 logging:
-    file: ${hope.work-dir}/logs/log.log
+    file:
+      path: ${hope.work-dir}/logs/${spring.application.name}/${spring.application.name}.log
     level:
       com.hope: DEBUG
       org.springframework: WARN
@@ -82,4 +82,4 @@ justauth:
     type: default
 
 hope:
-    work-dir: ${user.home}/.hope/
+    work-dir: ${user.home}/.hope/${spring.profiles.active}/
