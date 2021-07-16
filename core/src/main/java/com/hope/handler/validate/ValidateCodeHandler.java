@@ -1,10 +1,11 @@
-package com.hope.service;
+package com.hope.handler.validate;
 
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.RandomUtil;
 import com.google.code.kaptcha.Producer;
 import com.hope.consts.Constants;
 import com.hope.exception.CaptchaException;
+import com.hope.handler.cache.RedisHandler;
 import com.hope.utils.AjaxResult;
 import com.hope.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,13 @@ import java.util.concurrent.TimeUnit;
  * @author aodeng
  */
 @Service
-public class ValidateCodeService {
+public class ValidateCodeHandler {
 
     @Autowired
     private Producer producer;
 
     @Autowired
-    private RedisService redisService;
+    private RedisHandler redisService;
 
     /**
      * 生成验证码

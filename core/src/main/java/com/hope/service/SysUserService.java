@@ -8,7 +8,7 @@ import com.hope.model.bean.SysUserBean;
 /**
  * @author aodeng
  **/
-public interface ISysUserService extends IService<SysUserBean> {
+public interface SysUserService extends IService<SysUserBean> {
 
     IPage<SysUserBean> selectUserListPageVo(Page page, SysUserBean dto);
 }

@@ -3,7 +3,7 @@ package com.hope.controller.test;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hope.model.bean.SysUserBean;
-import com.hope.service.ISysUserService;
+import com.hope.service.SysUserService;
 import com.hope.utils.AjaxResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import java.util.Map;
 public class TestController {
 
     @Autowired
-    private ISysUserService iSysUserService;
+    private SysUserService iSysUserService;
 
     @RequestMapping("test")
     public String test() {

@@ -1,6 +1,6 @@
 package com.hope.controller.base;
 
-import com.hope.service.ValidateCodeService;
+import com.hope.handler.validate.ValidateCodeHandler;
 import com.hope.utils.AjaxResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.io.IOException;
 public class KaptchaController {
 
     @Autowired
-    private ValidateCodeService validateCodeService;
+    private ValidateCodeHandler validateCodeService;
 
     /**
      * 获取验证码图片

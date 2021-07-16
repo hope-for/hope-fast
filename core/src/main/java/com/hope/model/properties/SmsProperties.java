@@ -1,4 +1,4 @@
-package com.hope.config;
+package com.hope.model.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "sms")
 @Configuration
-public class SmsConfig {
+public class SmsProperties {
 
     /**
      * 阿里云用户AccessKey AccessKey ID
@@ -39,7 +39,7 @@ public class SmsConfig {
     }
 
     public void setAccessKeyId(String accessKeyId) {
-        SmsConfig.accessKeyId = accessKeyId;
+        SmsProperties.accessKeyId = accessKeyId;
     }
 
     public static String getAccessKeySecret() {
@@ -47,7 +47,7 @@ public class SmsConfig {
     }
 
     public void setAccessKeySecret(String accessKeySecret) {
-        SmsConfig.accessKeySecret = accessKeySecret;
+        SmsProperties.accessKeySecret = accessKeySecret;
     }
 
     public static String getTemplateCode() {
@@ -55,7 +55,7 @@ public class SmsConfig {
     }
 
     public void setTemplateCode(String templateCode) {
-        SmsConfig.templateCode = templateCode;
+        SmsProperties.templateCode = templateCode;
     }
 
     public static String getSignName() {
@@ -63,6 +63,6 @@ public class SmsConfig {
     }
 
     public void setSignName(String signName) {
-        SmsConfig.signName = signName;
+        SmsProperties.signName = signName;
     }
 }

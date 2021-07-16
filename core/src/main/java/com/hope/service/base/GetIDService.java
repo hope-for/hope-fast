@@ -1,4 +1,4 @@
-package com.hope.service.impl;
+package com.hope.service.base;
 
 import com.hope.mapper.GetIDMapper;
 import com.hope.model.bean.GetID;

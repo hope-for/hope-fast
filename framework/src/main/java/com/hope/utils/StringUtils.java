@@ -1,6 +1,6 @@
 package com.hope.utils;
 
-import com.hope.text.StrFormatter;
+import com.hope.utils.text.StrFormatter;
 
 import java.util.Collection;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.hope.service;
+package com.hope.handler.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  **/
 @SuppressWarnings(value = {"unchecked", "rawtypes"})
 @Component
-public class RedisService {
+public class RedisHandler {
 
     @Autowired
     public RedisTemplate redisTemplate;

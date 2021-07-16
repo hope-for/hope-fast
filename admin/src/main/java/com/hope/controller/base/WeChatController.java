@@ -1,6 +1,6 @@
 package com.hope.controller.base;
 
-import com.hope.service.impl.WeChatService;
+import com.hope.handler.wechat.WeChatHandler;
 import com.hope.utils.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class WeChatController {
 
     @Autowired
-    private WeChatService weChatService;
+    private WeChatHandler weChatService;
 
     /**
     * 根据code获取微信小程序用户openid，session_key

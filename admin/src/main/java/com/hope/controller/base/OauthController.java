@@ -21,11 +21,9 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @className: OauthController
- * @Description: TODO 第三方授权登录
- * @version: v1.0.0
- * @author: 低调小熊猫
- * @date: 14:06 21-6-15
+ * TODO 第三方授权登录
+ *
+ * @author aodeng
  */
 @RestController
 @RequestMapping("/oauth")

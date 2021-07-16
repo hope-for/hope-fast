@@ -1,4 +1,4 @@
-package com.hope.service.impl;
+package com.hope.handler.wechat;
 
 import cn.hutool.core.codec.Base64;
 import cn.hutool.http.HttpRequest;
@@ -31,12 +31,12 @@ import java.util.Map;
  * @author aodeng
  */
 @Service
-public class WeChatService {
+public class WeChatHandler {
 
     /**
      * logger
      */
-    private static final Logger logger = LoggerFactory.getLogger(WeChatService.class);
+    private static final Logger logger = LoggerFactory.getLogger(WeChatHandler.class);
 
     @Autowired
     private TmConfigMapper tmConfigMapper;

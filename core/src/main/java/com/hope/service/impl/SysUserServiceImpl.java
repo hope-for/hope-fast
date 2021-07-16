@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hope.mapper.SysUserMapper;
 import com.hope.model.bean.SysUserBean;
-import com.hope.service.ISysUserService;
+import com.hope.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @create:2018-10-16 15:21
  **/
 @Service
-public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserBean> implements ISysUserService {
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserBean> implements SysUserService {
 
     @Autowired
     private SysUserMapper sysUserMapper;

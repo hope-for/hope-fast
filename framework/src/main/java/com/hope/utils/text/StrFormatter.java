@@ -1,4 +1,4 @@
-package com.hope.text;
+package com.hope.utils.text;
 
 
 import com.hope.utils.StringUtils;

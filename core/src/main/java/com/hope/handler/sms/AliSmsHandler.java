@@ -1,25 +1,22 @@
-package com.hope.service.impl;
+package com.hope.handler.sms;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.aliyuncs.CommonRequest;
-import com.aliyuncs.CommonResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
-import com.aliyuncs.exceptions.ClientException;
-import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
-import com.hope.config.SmsConfig;
+import com.hope.model.properties.SmsProperties;
 import com.hope.consts.Constants;
 import com.hope.exception.CustomException;
-import com.hope.service.RedisService;
+import com.hope.handler.cache.RedisHandler;
 import com.hope.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,16 +25,16 @@ import java.util.concurrent.TimeUnit;
  *
  * @author aodeng
  */
-@Service
-public class AliyunSmsService {
+@Component
+public class AliSmsHandler {
 
     /**
      * logger
      */
-    private static final Logger logger = LoggerFactory.getLogger(AliyunSmsService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AliSmsHandler.class);
 
     @Autowired
-    private RedisService redisService;
+    private RedisHandler redisService;
 
     /**
      * 发送短信
@@ -66,7 +63,7 @@ public class AliyunSmsService {
             throw new CustomException("手机号不能为空");
         }
 
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", SmsConfig.getAccessKeyId(), SmsConfig.getAccessKeySecret());
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", SmsProperties.getAccessKeyId(), SmsProperties.getAccessKeySecret());
         IAcsClient client = new DefaultAcsClient(profile);
 
         CommonRequest request = new CommonRequest();
@@ -74,10 +71,10 @@ public class AliyunSmsService {
         request.setSysDomain("dysmsapi.aliyuncs.com");
         request.setSysVersion("2017-05-25");
         request.setSysAction("SendSms");
-        request.putQueryParameter("SignName", SmsConfig.getSignName());
+        request.putQueryParameter("SignName", SmsProperties.getSignName());
         request.putQueryParameter("RegionId", "cn-hangzhou");
         request.putQueryParameter("PhoneNumbers", phonenumbers);
-        request.putQueryParameter("TemplateCode", SmsConfig.getTemplateCode());
+        request.putQueryParameter("TemplateCode", SmsProperties.getTemplateCode());
         String verifyCode = RandomUtil.randomNumbers(4);
         request.putQueryParameter("TemplateParam", "{\"code\":\"" + verifyCode + "\"}");
 

@@ -4,7 +4,7 @@ import com.hope.annotation.Excel;
 import com.hope.annotation.Excel.ColumnType;
 import com.hope.annotation.Excel.Type;
 import com.hope.annotation.Excels;
-import com.hope.text.Convert;
+import com.hope.utils.text.Convert;
 import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.*;
