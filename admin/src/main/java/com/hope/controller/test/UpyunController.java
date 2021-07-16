@@ -16,9 +16,12 @@ import java.io.IOException;
 @RestController
 public class UpyunController {
 
+    private static final String BUCKET_NAME = "ddxxm-aodeng";
+    private static final String OPERATOR_NAME = "aodeng";
+    private static final String OPERATOR_PWD = "hdsBLUHVy9ERg3LuoEjG0TCs0sa06ReV";
+
     public static void main(String[] args) throws IOException, UpException {
-        RestManager manager = new RestManager("ddxxm-aodeng", "aodeng",
-                "hdsBLUHVy9ERg3LuoEjG0TCs0sa06ReV");
+        RestManager manager = new RestManager(BUCKET_NAME, OPERATOR_NAME, OPERATOR_PWD);
         String path="/image/";
         Response response = manager.readDirIter(path,null);
         System.out.println(response.body().string());

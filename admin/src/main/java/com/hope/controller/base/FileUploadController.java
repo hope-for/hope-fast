@@ -6,6 +6,9 @@ import com.hope.exception.CustomException;
 import com.hope.utils.AjaxResult;
 import com.hope.utils.StringUtils;
 import com.hope.utils.file.FileUploadUtils;
+import com.upyun.RestManager;
+import com.upyun.UpException;
+import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,12 +38,23 @@ public class FileUploadController {
      */
     private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
 
-    //绑定文件上传路径到uploadPath
     @Value("${web.upload-path}")
     private String uploadPath;
 
+    @Value("${upyun.BUCKET_NAME}")
+    private String BUCKET_NAME;
+
+    @Value("${upyun.OPERATOR_NAME}")
+    private String OPERATOR_NAME;
+
+    @Value("${upyun.OPERATOR_PWD}")
+    private String OPERATOR_PWD;
+
+    @Value("${upyun.YP_PATH}")
+    private String YP_PATH;
+
     /**
-     * 文件上传FTP
+     * 文件上传FTP存储
      *
      * @author aodeng
      */
@@ -68,8 +82,8 @@ public class FileUploadController {
      * @return
      */
     @PostMapping("/uploadToLocal")
-    public String upload(MultipartFile file,
-                         HttpServletRequest request) {
+    public String uploadToLocal(MultipartFile file,
+                                HttpServletRequest request) {
         String format = DateUtil.format(new Date(), "yyyy/MM/dd");
         File folder = new File(uploadPath + format);
         if (!folder.isDirectory()) {
@@ -93,5 +107,20 @@ public class FileUploadController {
             throw new CustomException(e.getMessage());
         }
 
+    }
+
+    /**
+     * 文件上传又拍云存储
+     * @param	file
+     * @param	request
+     * @return java.lang.String
+     */
+    @PostMapping("/uploadToUpYun")
+    public String uploadToUpYun(MultipartFile file,
+                                HttpServletRequest request) throws IOException, UpException {
+        RestManager manager = new RestManager(BUCKET_NAME, OPERATOR_NAME, OPERATOR_PWD);
+        String path=YP_PATH;
+        Response response=manager.writeFile(path, (File) file,null);
+        return response.body().string();
     }
 }

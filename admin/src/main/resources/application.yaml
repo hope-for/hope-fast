@@ -81,5 +81,12 @@ justauth:
   cache:
     type: default
 
+#又拍云配置 空间名称,操作员名称,操作员密码,文件路径
+upyun:
+  BUCKET_NAME: ddxxm-aodeng
+  OPERATOR_NAME: aodeng
+  OPERATOR_PWD: hdsBLUHVy9ERg3LuoEjG0TCs0sa06ReV
+  YP_PATH: /image/
+
 hope:
     work-dir: ${user.home}/.hope/${spring.profiles.active}/
