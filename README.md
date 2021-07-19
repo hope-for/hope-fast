@@ -27,7 +27,3 @@
 ### 开源协议
 
 hope-fast 使用  MIT 协议开源
-
-### 联系
-
-![微信图片_20200329114547](http://image.ilovey.live/image/0d6ff0bf2d7d51cc9839bd17c7c9b746.png)
