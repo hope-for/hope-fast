@@ -4,6 +4,7 @@ import cn.hutool.core.date.DateUtil;
 import com.hope.exception.*;
 import com.hope.support.HttpStatus;
 import com.hope.utils.AjaxResult;
+import com.upyun.UpException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -77,7 +78,20 @@ public class BizController {
     @ExceptionHandler(value = FileOperationException.class)
     @ResponseBody
     public AjaxResult biz4(HttpServletRequest req, Exception e) {
-        logger.error("发生文件上传异常！\n原因是：[{}",
+        logger.error("发生文件异常！\n原因是：[{}",
+                e.getMessage() + "]-[具体原因查看下面详细打印,当前时间是:" + DateUtil.date() + "]");
+        e.printStackTrace();
+        return AjaxResult.error(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+
+
+    /**
+     * 业务异常
+     */
+    @ExceptionHandler(value = UpException.class)
+    @ResponseBody
+    public AjaxResult biz5(HttpServletRequest req, Exception e) {
+        logger.error("又拍云SDK操作异常！\n原因是：[{}",
                 e.getMessage() + "]-[具体原因查看下面详细打印,当前时间是:" + DateUtil.date() + "]");
         e.printStackTrace();
         return AjaxResult.error(HttpStatus.BAD_REQUEST, e.getMessage());

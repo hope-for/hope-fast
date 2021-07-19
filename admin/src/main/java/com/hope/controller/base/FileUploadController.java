@@ -12,10 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -102,12 +99,22 @@ public class FileUploadController {
     /**
      * 文件上传又拍云存储
      * @param	file
-     * @param	request
      * @return java.lang.String
      */
     @PostMapping("/toUpYun")
     public UploadResult toUpYun(MultipartFile file){
         UploadResult uploadResult = upOssFileHandler.upload(file);
         return uploadResult;
+    }
+
+    /**
+     * 文件删除:又拍云
+     * @param	key
+     * @return com.hope.utils.AjaxResult
+     */
+    @DeleteMapping("/delUpYunFile/{key}")
+    public AjaxResult delUpYunFile(@PathVariable(value = "key") String key) {
+        upOssFileHandler.delete(key);
+        return AjaxResult.success();
     }
 }

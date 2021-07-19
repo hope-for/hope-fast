@@ -90,11 +90,26 @@ public class UpOssFileHandler implements FileHandler{
 
     @Override
     public void delete(String key) {
+        Assert.notNull(key, "File key must not be blank");
 
+        RestManager manager=new RestManager(upYunProperties.getBUCKET_NAME(), upYunProperties.getOPERATOR_NAME(), upYunProperties.getOPERATOR_PWD());
+        manager.setTimeout(60 * 10);
+        manager.setApiDomain(RestManager.ED_AUTO);
+
+        try {
+            Response result = manager.deleteFile(key, null);
+            if (!result.isSuccessful()) {
+                log.warn("附件 " + key + " 从又拍云删除失败");
+                throw new FileOperationException("附件 " + key + " 从又拍云删除失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new FileOperationException("附件 " + key + " 从又拍云删除失败", e);
+        }
     }
 
     @Override
     public AttachmentTypeEnum getAttachmentType() {
-        return null;
+        return AttachmentTypeEnum.UPOSS;
     }
 }
