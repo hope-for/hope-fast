@@ -1,27 +1,27 @@
 package com.hope.exception;
 
 /**
- * 自定义异常
- * token异常
+ * 文件上传异常
  *
- * @author aodeng
+ * @author AoDeng
+ * @date 17:54 21-7-16
  */
-public class TokenException extends RuntimeException {
+public class FileOperationException extends RuntimeException{
 
     private Integer code;
 
     private String message;
 
-    public TokenException(String message) {
+    public FileOperationException(String message) {
         this.message = message;
     }
 
-    public TokenException(String message, Integer code) {
+    public FileOperationException(String message, Integer code) {
         this.message = message;
         this.code = code;
     }
 
-    public TokenException(String message, Throwable e) {
+    public FileOperationException(String message, Throwable e) {
         super(message, e);
         this.message = message;
     }

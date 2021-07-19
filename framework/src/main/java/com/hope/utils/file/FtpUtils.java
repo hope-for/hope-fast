@@ -1,6 +1,6 @@
 package com.hope.utils.file;
 
-import com.hope.consts.Constants;
+import com.hope.support.HopeConst;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
@@ -12,19 +12,19 @@ public class FtpUtils {
     /**
      * ftp服务器地址
      */
-    public String hostname = Constants.FTP_HOSTNAME;
+    public String hostname = HopeConst.FTP_HOSTNAME;
     /**
      * ftp登录账号
      */
-    public String username = Constants.FTP_USERNAME;
+    public String username = HopeConst.FTP_USERNAME;
     /**
      * ftp登录密码
      */
-    public String password = Constants.FTP_PASSWORD;
+    public String password = HopeConst.FTP_PASSWORD;
     /**
      * ftp服务器端口号默认为21
      */
-    public Integer port = Constants.FTP_PORT;
+    public Integer port = HopeConst.FTP_PORT;
 
     public FTPClient ftpClient = null;
 

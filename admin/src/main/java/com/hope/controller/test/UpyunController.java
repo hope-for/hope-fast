@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 /**
- * TODO 又拍云测试类
+ * 又拍云测试类
  *
  * @author AoDeng
  * @date 16:42 21-7-14

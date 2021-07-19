@@ -1,4 +1,4 @@
-package com.hope.model.support;
+package com.hope.model.dto;
 
 import lombok.Data;
 import lombok.ToString;
@@ -8,13 +8,13 @@ import org.springframework.http.MediaType;
  * Upload result dto.
  *
  * @author AoDeng
- * @date 16:20 21-7-16
+ * @date 17:59 21-7-16
  */
 @Data
 @ToString
 public class UploadResult {
 
-    private String fileName;
+    private String filename;
 
     private String filePath;
 
@@ -31,5 +31,4 @@ public class UploadResult {
     private Integer width;
 
     private Integer height;
-
 }

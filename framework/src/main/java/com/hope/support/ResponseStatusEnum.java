@@ -1,4 +1,4 @@
-package com.hope.enums;
+package com.hope.support;
 
 /**
  * @author aodeng

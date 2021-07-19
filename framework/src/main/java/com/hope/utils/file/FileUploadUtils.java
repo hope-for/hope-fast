@@ -1,6 +1,6 @@
 package com.hope.utils.file;
 
-import com.hope.consts.Constants;
+import com.hope.support.HopeConst;
 import com.hope.exception.file.FileNameLengthLimitExceededException;
 import com.hope.exception.file.FileSizeLimitExceededException;
 import com.hope.exception.file.InvalidExtensionException;
@@ -25,7 +25,7 @@ public class FileUploadUtils {
     /**
      * 默认上传的地址
      */
-    private static String defaultBaseDir = Constants.FTP_DEFAULT_BASE_DIR;
+    private static String defaultBaseDir = HopeConst.FTP_DEFAULT_BASE_DIR;
     /**
      * 默认大小 50M
      */
@@ -129,7 +129,7 @@ public class FileUploadUtils {
     private static String getPathFileName(String uploadDir, String fileName) {
 //        int dirLastIndex = FileUploadUtils.getDefaultBaseDir().length() + 1;
 //        String currentDir = StringUtils.substring(uploadDir, dirLastIndex);
-        return Constants.RESOURCE_SERVER_PATH + uploadDir + "/" + fileName;
+        return HopeConst.RESOURCE_SERVER_PATH + uploadDir + "/" + fileName;
     }
 
     /**

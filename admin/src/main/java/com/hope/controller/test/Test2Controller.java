@@ -2,7 +2,7 @@ package com.hope.controller.test;
 
 /**
  * @className: Test2Controller
- * @Description: TODO 个人测试代码 可删除 双重校验锁实现对象单理（线程安全）
+ * @Description:  个人测试代码 可删除 双重校验锁实现对象单理（线程安全）
  * @version: v1.0.0
  * @author: 低调小熊猫
  * @date: 17:35 21-6-17

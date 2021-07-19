@@ -6,6 +6,7 @@ package com.hope.exception;
  * @author aodeng
  */
 public class BaseException extends RuntimeException {
+
     private static final long serialVersionUID = 1L;
 
     /**

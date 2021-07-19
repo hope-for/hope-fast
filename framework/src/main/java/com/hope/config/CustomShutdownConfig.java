@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- *TODO 优雅关闭 Spring Boot 应用
+ *优雅关闭 Spring Boot 应用
  *
  * @author AoDeng
  * @date 11:42 21-7-15

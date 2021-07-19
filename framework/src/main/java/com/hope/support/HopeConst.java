@@ -1,11 +1,13 @@
-package com.hope.consts;
+package com.hope.support;
+
+import java.io.File;
 
 /**
  * 通用常量信息
  *
  * @author aodeng
  */
-public class Constants {
+public class HopeConst {
     /**
      * UTF-8 字符集
      */
@@ -138,4 +140,9 @@ public class Constants {
      * MD5 加密盐值 salt
      */
     public static final String MD5_SALT = "yt_device_app";
+
+    /**
+     * Path separator.
+     */
+    public static final String FILE_SEPARATOR = File.separator;
 }

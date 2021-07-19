@@ -3,7 +3,7 @@ package com.hope.handler.validate;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.RandomUtil;
 import com.google.code.kaptcha.Producer;
-import com.hope.consts.Constants;
+import com.hope.support.HopeConst;
 import com.hope.exception.CaptchaException;
 import com.hope.handler.cache.RedisHandler;
 import com.hope.utils.AjaxResult;
@@ -42,9 +42,9 @@ public class ValidateCodeHandler {
         BufferedImage image = producer.createImage(capStr);
         // 保存验证码信息
         String uuid = RandomUtil.simpleUUID();
-        String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
+        String verifyKey = HopeConst.CAPTCHA_CODE_KEY + uuid;
 
-        redisService.setCacheObject(verifyKey, verifyCode, Constants.CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
+        redisService.setCacheObject(verifyKey, verifyCode, HopeConst.CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
         // 转换流信息写出
         FastByteArrayOutputStream os = new FastByteArrayOutputStream();
         try {
@@ -69,7 +69,7 @@ public class ValidateCodeHandler {
         if (StringUtils.isEmpty(uuid)) {
             throw new CaptchaException("验证码已失效");
         }
-        String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
+        String verifyKey = HopeConst.CAPTCHA_CODE_KEY + uuid;
         String captcha = redisService.getCacheObject(verifyKey);
         redisService.deleteObject(verifyKey);
 

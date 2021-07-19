@@ -1,27 +1,27 @@
 package com.hope.exception;
 
 /**
- * 自定义异常
- * token异常
+ * ImageFormatException
  *
- * @author aodeng
+ * @author AoDeng
+ * @date 18:08 21-7-16
  */
-public class TokenException extends RuntimeException {
+public class ImageFormatException extends RuntimeException {
 
     private Integer code;
 
     private String message;
 
-    public TokenException(String message) {
+    public ImageFormatException(String message) {
         this.message = message;
     }
 
-    public TokenException(String message, Integer code) {
+    public ImageFormatException(String message, Integer code) {
         this.message = message;
         this.code = code;
     }
 
-    public TokenException(String message, Throwable e) {
+    public ImageFormatException(String message, Throwable e) {
         super(message, e);
         this.message = message;
     }

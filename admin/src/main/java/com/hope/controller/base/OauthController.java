@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * TODO 第三方授权登录
+ * 第三方授权登录
  *
  * @author aodeng
  */

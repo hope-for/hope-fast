@@ -1,6 +1,6 @@
 package com.hope.utils;
 
-import com.hope.consts.HttpStatus;
+import com.hope.support.HttpStatus;
 
 import java.util.HashMap;
 

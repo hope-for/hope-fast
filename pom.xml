@@ -163,6 +163,13 @@
                 <version>4.2.3</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/net.sf.image4j/image4j -->
+            <dependency>
+                <groupId>net.sf.image4j</groupId>
+                <artifactId>image4j</artifactId>
+                <version>0.7zensight1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

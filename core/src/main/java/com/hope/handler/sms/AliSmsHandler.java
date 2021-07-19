@@ -9,7 +9,7 @@ import com.aliyuncs.IAcsClient;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.hope.model.properties.SmsProperties;
-import com.hope.consts.Constants;
+import com.hope.support.HopeConst;
 import com.hope.exception.CustomException;
 import com.hope.handler.cache.RedisHandler;
 import com.hope.utils.StringUtils;
@@ -50,7 +50,7 @@ public class AliSmsHandler {
         if (StringUtils.isEmpty(uuid)) {
             throw new CustomException("图片验证码已失效");
         }
-        String verifyKey2 = Constants.CAPTCHA_CODE_KEY + uuid;
+        String verifyKey2 = HopeConst.CAPTCHA_CODE_KEY + uuid;
         String captcha = redisService.getCacheObject(verifyKey2);
         redisService.deleteObject(verifyKey2);
 
@@ -99,9 +99,9 @@ public class AliSmsHandler {
         //开发测试调用代码，节省短信调用次数
         JSONObject jsonObject= JSONUtil.parseObj("{\"Message\":\"OK\",\"RequestId\":\"CA830728-6D17-4757-AF12-33C4BC7C0EDB\",\"BizId\":\"821820800757100677^0\",\"Code\":\"OK\"}");
         if ("OK".equals(jsonObject.get("Message"))){
-            String verifyKey = Constants.SMS_CODE_KEY + phonenumbers;
+            String verifyKey = HopeConst.SMS_CODE_KEY + phonenumbers;
             logger.info("测试验证码：{}",6666);
-            redisService.setCacheObject(verifyKey,"6666", Constants.SMS_CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
+            redisService.setCacheObject(verifyKey,"6666", HopeConst.SMS_CAPTCHA_EXPIRATION, TimeUnit.MINUTES);
         }
         return 1;
     }
