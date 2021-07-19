@@ -3,14 +3,14 @@ package com.hope.controller.base;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.hope.exception.CustomException;
+import com.hope.handler.file.UpOssFileHandler;
+import com.hope.model.dto.UploadResult;
 import com.hope.utils.AjaxResult;
 import com.hope.utils.StringUtils;
 import com.hope.utils.file.FileUploadUtils;
-import com.upyun.RestManager;
-import com.upyun.UpException;
-import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,26 +41,17 @@ public class FileUploadController {
     @Value("${web.upload-path}")
     private String uploadPath;
 
-    @Value("${upyun.BUCKET_NAME}")
-    private String BUCKET_NAME;
-
-    @Value("${upyun.OPERATOR_NAME}")
-    private String OPERATOR_NAME;
-
-    @Value("${upyun.OPERATOR_PWD}")
-    private String OPERATOR_PWD;
-
-    @Value("${upyun.YP_PATH}")
-    private String YP_PATH;
+    @Autowired
+    private UpOssFileHandler upOssFileHandler;
 
     /**
      * 文件上传FTP存储
      *
      * @author aodeng
      */
-    @PostMapping("/uploadFileToFTP")
+    @PostMapping("/toFTP")
     @ResponseBody
-    public AjaxResult uploadFileFTP(MultipartFile file) throws IOException {
+    public AjaxResult toFTP(MultipartFile file) throws IOException {
         if (!file.isEmpty()) {
             String fileName = RandomUtil.randomNumbers(10) + "_" + file.getOriginalFilename();
             String avatar = FileUploadUtils.upload("/equipment", file, fileName);
@@ -81,9 +72,8 @@ public class FileUploadController {
      * @param request
      * @return
      */
-    @PostMapping("/uploadToLocal")
-    public String uploadToLocal(MultipartFile file,
-                                HttpServletRequest request) {
+    @PostMapping("/toLocal")
+    public String toLocal(MultipartFile file, HttpServletRequest request) {
         String format = DateUtil.format(new Date(), "yyyy/MM/dd");
         File folder = new File(uploadPath + format);
         if (!folder.isDirectory()) {
@@ -115,12 +105,9 @@ public class FileUploadController {
      * @param	request
      * @return java.lang.String
      */
-    @PostMapping("/uploadToUpYun")
-    public String uploadToUpYun(MultipartFile file,
-                                HttpServletRequest request) throws IOException, UpException {
-        RestManager manager = new RestManager(BUCKET_NAME, OPERATOR_NAME, OPERATOR_PWD);
-        String path=YP_PATH;
-        Response response=manager.writeFile(path, (File) file,null);
-        return response.body().string();
+    @PostMapping("/toUpYun")
+    public UploadResult toUpYun(MultipartFile file){
+        UploadResult uploadResult = upOssFileHandler.upload(file);
+        return uploadResult;
     }
 }

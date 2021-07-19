@@ -35,5 +35,13 @@ public class UpYunProperties {
      * 其他文件上传路径
      */
     private String YP_FILE_PATH;
+    /**
+     * 域名
+     */
+    private String YP_DOMAN;
+    /**
+     * 协议
+     */
+    private String YP_PROTOCOL;
 
 }

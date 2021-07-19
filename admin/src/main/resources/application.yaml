@@ -20,7 +20,8 @@ spring:
   #数据库配置
   datasource:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      #url: jdbc:mysql://localhost:3306/hope?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://39.99.190.224:3306/yt-devicedb-test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: root
       type: com.alibaba.druid.pool.DruidDataSource
@@ -32,7 +33,7 @@ spring:
   # Redis
   redis:
       database: 12
-      host: localhost
+      host: 39.99.190.224
       port: 6379
       #密码默认为空，注释即可，要添加密码，去掉注释添加就行
       #password:
@@ -81,12 +82,15 @@ justauth:
   cache:
     type: default
 
-#又拍云配置 空间名称,操作员名称,操作员密码,文件路径
+#又拍云配置：空间名称，操作员名称，操作员密码，图片上传路径，其他文件上传路径，域名，协议
 upyun:
   BUCKET_NAME: ddxxm-aodeng
   OPERATOR_NAME: aodeng
   OPERATOR_PWD: hdsBLUHVy9ERg3LuoEjG0TCs0sa06ReV
-  YP_PATH: /image/
+  YP_IMAGE_PATH: /image/
+  YP_FILE_PATH: /file/
+  YP_DOMAN: ddxxm-aodeng.test.upcdn.net
+  YP_PROTOCOL: http://
 
 hope:
     work-dir: ${user.home}/.hope/${spring.profiles.active}/
