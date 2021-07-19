@@ -112,8 +112,8 @@ public class FileUploadController {
      * @param	key
      * @return com.hope.utils.AjaxResult
      */
-    @DeleteMapping("/delUpYunFile/{key}")
-    public AjaxResult delUpYunFile(@PathVariable(value = "key") String key) {
+    @PostMapping("/delUpYunFile")
+    public AjaxResult delUpYunFile(String key) {
         upOssFileHandler.delete(key);
         return AjaxResult.success();
     }
