@@ -11,6 +11,7 @@
 - 微信相关：根据code获取微信小程序用户openid，session_key 解密小程序用户手机号
 - 优雅关闭 Spring Boot 应用
 - 又拍云附件上传，附件删除 SDK版本：4.2.3
+- SpringBoot默认的连接池 HikariCP（史上最快？）
 
 <h1 align="center"><a href="https://github.com/java-aodeng" target="_blank">hope-fast</a></h1>
 

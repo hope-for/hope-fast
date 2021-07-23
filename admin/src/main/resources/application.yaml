@@ -21,7 +21,7 @@ spring:
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/yt-devicedb-test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      url: jdbc:mysql://39.99.190.224:3306/yt-devicedb-test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
       username: root
       password: root
       # 连接池
@@ -45,7 +45,7 @@ spring:
   redis:
       database: 12
       #host: localhost
-      host: localhost
+      host: 39.99.190.224
       port: 6379
       #密码默认为空，注释即可，要添加密码，去掉注释添加就行
       #password:
