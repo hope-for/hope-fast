@@ -21,7 +21,7 @@ spring:
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://:3306/yt-devicedb-test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      url: jdbc:mysql://${hope.server-host-ip}:3306/yt-devicedb-test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
       username: root
       password: root
       # 连接池
@@ -44,7 +44,7 @@ spring:
   # Redis
   redis:
       database: 12
-      host:
+      host: ${hope.server-host-ip}
       port: 6379
       #密码默认为空，注释即可，要添加密码，去掉注释添加就行
       #password:
@@ -105,3 +105,4 @@ upyun:
 
 hope:
     work-dir: ${user.home}/.hope/${spring.profiles.active}/
+    server-host-ip: 39.99.190.224
