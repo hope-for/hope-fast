@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hope.mapper.GetIDMapper">
     <!--低调小熊猫专用-->
+    <!-- 此处的大括号与call之间不能换行（但是可以有空格），后面的大括号可以换行，否则会抛异常 -->
     <select id="getID" statementType="CALLABLE" parameterType="com.hope.model.bean.GetID" useCache="false">
         <![CDATA[
         call GetID2(#{name,mode=IN},#{id,jdbcType=VARCHAR,mode=OUT});
