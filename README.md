@@ -12,6 +12,7 @@
 - 优雅关闭 Spring Boot 应用
 - 又拍云附件上传，附件删除 SDK版本：4.2.3
 - SpringBoot默认的连接池 HikariCP（史上最快？）
+- Token校验拦截器
 - 数据库主键设置GUID Mybatis调用存储过程 
 
     数据库配置：
