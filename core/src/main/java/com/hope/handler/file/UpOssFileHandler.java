@@ -81,6 +81,9 @@ public class UpOssFileHandler implements FileHandler{
                     return filePath;
                 }
             });
+
+            //TODO 系统附件上传日志记录...
+
             return uploadResult;
 
         }catch (Exception e){
@@ -102,6 +105,9 @@ public class UpOssFileHandler implements FileHandler{
                 log.warn("附件 " + key + " 从又拍云删除失败");
                 throw new FileOperationException("附件 " + key + " 从又拍云删除失败");
             }
+
+            //TODO 系统附件删除日志记录...
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new FileOperationException("附件 " + key + " 从又拍云删除失败", e);
