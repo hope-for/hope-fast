@@ -97,7 +97,7 @@ justauth:
 upyun:
   BUCKET_NAME: ddxxm-aodeng
   OPERATOR_NAME: aodeng
-  OPERATOR_PWD: hdsBLUHVy9ERg3LuoEjG0TCs0sa06ReV
+  OPERATOR_PWD:
   YP_IMAGE_PATH: /image/
   YP_FILE_PATH: /file/
   YP_DOMAN: ddxxm-aodeng.test.upcdn.net
@@ -105,4 +105,4 @@ upyun:
 
 hope:
     work-dir: ${user.home}/.hope/${spring.profiles.active}/
-    server-host-ip: 39.99.190.224
+    server-host-ip:

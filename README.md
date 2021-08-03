@@ -15,8 +15,8 @@
 - Token校验拦截器
 - 数据库主键设置GUID Mybatis调用存储过程 
 
-    数据库配置：
-    
+>    数据库配置：
+```    
     1、mysql数据库创建表（该表为配置id生成规则）：
     
         CREATE TABLE `pb_code_ident` (
@@ -68,7 +68,7 @@
             call GetID2(#{name,mode=IN},#{id,jdbcType=VARCHAR,mode=OUT});
             ]]>
         </select>
-        
+```        
 <h1 align="center"><a href="https://github.com/java-aodeng" target="_blank">hope-fast</a></h1>
 
 > 简介：快速开发
