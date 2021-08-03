@@ -60,7 +60,12 @@ spring:
   #配置自定义静态文件的位置
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
-
+  #最大支持文件大小,请求大小设置
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 10240MB
+      resolve-lazily: true
 #mybatis
 mybatis:
     type-aliases-package: com.hope.model.bean
