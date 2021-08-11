@@ -145,4 +145,14 @@ public class HopeConst {
      * Path separator.
      */
     public static final String FILE_SEPARATOR = File.separator;
+
+    /**数据字段标识
+     *  删除 */
+    public static final String FIELD_DELETE = "0";
+    /** 未删除*/
+    public static final String FIELD_NOT_DELETE = "1";
+    /** 停用*/
+    public static final String FIELD_STOP_USING = "0";
+    /** 启用*/
+    public static final String FIELD_ENABLE = "1";
 }
