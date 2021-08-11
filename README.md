@@ -14,61 +14,66 @@
 - SpringBoot默认的连接池 HikariCP（史上最快？）
 - Token校验拦截器
 - 数据库主键设置GUID Mybatis调用存储过程 
+    
+    <details>   
+        <summary>
+            <b>存储过程 数据库配置：</b>
+        </summary>
 
->    数据库配置：
-```    
-    1、mysql数据库创建表（该表为配置id生成规则）：
+        1、mysql数据库创建表（该表为配置id生成规则）：
+
+            CREATE TABLE `pb_code_ident` (
+              `PCI_Table` varchar(64) NOT NULL,
+              `PCI_Type` varchar(64) DEFAULT NULL,
+              `PCI_Length` int DEFAULT NULL,
+              `PCI_Head` varchar(8) DEFAULT NULL,
+              `PCI_Fill` varchar(64) DEFAULT NULL,
+              `PCI_Date` datetime DEFAULT NULL,
+              `PCI_Default` decimal(18,0) DEFAULT NULL,
+              `PCI_Identity` decimal(16,0) DEFAULT NULL,
+              PRIMARY KEY (`PCI_Table`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+        2、创建存储过程
+
+                DROP PROCEDURE IF EXISTS `GetID2`;
+                DELIMITER ;;
+                CREATE PROCEDURE `GetID2`(IN TableName VARCHAR(100),OUT TableID VARCHAR(36))
+                BEGIN
+                DECLARE s_Ident VARCHAR(20);
+                DECLARE s_Fill VARCHAR(1);
+                DECLARE s_Type VARCHAR(3);
+                DECLARE s_Date VARCHAR(16);
+                DECLARE s_Head VARCHAR(10);
+                DECLARE s_ID VARCHAR(20);
+                DECLARE d_Date datetime;
+
+                select PCI_Date into d_Date from PB_Code_Ident Where PCI_Table = TableName;
+                if(REPLACE(DATE_FORMAT(d_Date,'%Y/%m/%d'),'-','/')=REPLACE(curdate(),'-','/')) THEN
+                SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+                update PB_Code_Ident set PCI_Identity = PCI_Identity + 1 Where PCI_Table = TableName;
+                else
+                SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+                update PB_Code_Ident set PCI_Identity = PCI_Default,PCI_Date=REPLACE(curdate(),'-','/') Where PCI_Table = TableName;
+                end if;
+                select PCI_Identity,PCI_Head into s_ID,s_Head from PB_Code_Ident Where PCI_Table = TableName;
+                set @TableID = concat(s_Head,REPLACE(curdate(),'-',''),s_ID);
+                select @TableID INTO TableID;
+                END
+                ;;
+                DELIMITER ;
+
+        3、MyBatis调用
+
+            <!-- 此处的大括号与call之间不能换行（但是可以有空格），后面的大括号可以换行，否则会抛异常 -->
+            <select id="getID" statementType="CALLABLE" parameterType="com.hope.model.bean.GetID" useCache="false">
+                <![CDATA[
+                call GetID2(#{name,mode=IN},#{id,jdbcType=VARCHAR,mode=OUT});
+                ]]>
+            </select>
+
+    </details>
     
-        CREATE TABLE `pb_code_ident` (
-          `PCI_Table` varchar(64) NOT NULL,
-          `PCI_Type` varchar(64) DEFAULT NULL,
-          `PCI_Length` int DEFAULT NULL,
-          `PCI_Head` varchar(8) DEFAULT NULL,
-          `PCI_Fill` varchar(64) DEFAULT NULL,
-          `PCI_Date` datetime DEFAULT NULL,
-          `PCI_Default` decimal(18,0) DEFAULT NULL,
-          `PCI_Identity` decimal(16,0) DEFAULT NULL,
-          PRIMARY KEY (`PCI_Table`)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-    
-    2、创建存储过程
-    
-            DROP PROCEDURE IF EXISTS `GetID2`;
-            DELIMITER ;;
-            CREATE PROCEDURE `GetID2`(IN TableName VARCHAR(100),OUT TableID VARCHAR(36))
-            BEGIN
-            DECLARE s_Ident VARCHAR(20);
-            DECLARE s_Fill VARCHAR(1);
-            DECLARE s_Type VARCHAR(3);
-            DECLARE s_Date VARCHAR(16);
-            DECLARE s_Head VARCHAR(10);
-            DECLARE s_ID VARCHAR(20);
-            DECLARE d_Date datetime;
-    
-            select PCI_Date into d_Date from PB_Code_Ident Where PCI_Table = TableName;
-            if(REPLACE(DATE_FORMAT(d_Date,'%Y/%m/%d'),'-','/')=REPLACE(curdate(),'-','/')) THEN
-            SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
-            update PB_Code_Ident set PCI_Identity = PCI_Identity + 1 Where PCI_Table = TableName;
-            else
-            SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
-            update PB_Code_Ident set PCI_Identity = PCI_Default,PCI_Date=REPLACE(curdate(),'-','/') Where PCI_Table = TableName;
-            end if;
-            select PCI_Identity,PCI_Head into s_ID,s_Head from PB_Code_Ident Where PCI_Table = TableName;
-            set @TableID = concat(s_Head,REPLACE(curdate(),'-',''),s_ID);
-            select @TableID INTO TableID;
-            END
-            ;;
-            DELIMITER ;
-    
-    3、MyBatis调用
-    
-        <!-- 此处的大括号与call之间不能换行（但是可以有空格），后面的大括号可以换行，否则会抛异常 -->
-        <select id="getID" statementType="CALLABLE" parameterType="com.hope.model.bean.GetID" useCache="false">
-            <![CDATA[
-            call GetID2(#{name,mode=IN},#{id,jdbcType=VARCHAR,mode=OUT});
-            ]]>
-        </select>
-```        
 <h1 align="center"><a href="https://github.com/java-aodeng" target="_blank">hope-fast</a></h1>
 
 > 简介：快速开发
