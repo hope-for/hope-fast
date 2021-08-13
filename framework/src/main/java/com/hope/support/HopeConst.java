@@ -152,7 +152,7 @@ public class HopeConst {
     /** 未删除*/
     public static final String FIELD_NOT_DELETE = "1";
     /** 停用*/
-    public static final String FIELD_STOP_USING = "0";
+    public static final String FIELD_USING_STOP = "0";
     /** 启用*/
-    public static final String FIELD_ENABLE = "1";
+    public static final String FIELD_USING_START = "1";
 }
