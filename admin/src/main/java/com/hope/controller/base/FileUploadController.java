@@ -2,9 +2,11 @@ package com.hope.controller.base;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
+import com.hope.annotation.Log;
 import com.hope.exception.CustomException;
 import com.hope.handler.file.UpOssFileHandler;
 import com.hope.model.dto.UploadResult;
+import com.hope.support.BusinessType;
 import com.hope.utils.AjaxResult;
 import com.hope.utils.StringUtils;
 import com.hope.utils.file.FileUploadUtils;
@@ -12,7 +14,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -112,6 +117,7 @@ public class FileUploadController {
      * @param	key
      * @return com.hope.utils.AjaxResult
      */
+    @Log(title = "文件删除:又拍云",businessType = BusinessType.DELETE)
     @PostMapping("/delUpYunFile")
     public AjaxResult delUpYunFile(String key) {
         upOssFileHandler.delete(key);

@@ -13,6 +13,7 @@
 - 又拍云附件上传，附件删除 SDK版本：4.2.3
 - SpringBoot默认的连接池 HikariCP（史上最快？）
 - Token校验拦截器
+- 切面自定义注解@Log操作日志收集记录 日常开发非常方便
 - 数据库主键设置GUID Mybatis调用存储过程 
     
     <details>   

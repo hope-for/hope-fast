@@ -163,6 +163,12 @@
                 <version>0.7zensight1</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>2.5.3</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
