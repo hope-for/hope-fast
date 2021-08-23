@@ -129,5 +129,5 @@ upyun:
 
 hope:
     work-dir: ${user.home}/.hope/${spring.profiles.active}/
-    server-host-ip:
+    server-host-ip: 127.0.0.1
 
