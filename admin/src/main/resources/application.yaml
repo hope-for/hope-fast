@@ -66,6 +66,25 @@ spring:
       max-file-size: 10240MB
       max-request-size: 10240MB
       resolve-lazily: true
+  #发送电子邮件服务配置 账号，密码修改
+  mail:
+    host: smtp.qq.com
+    username: 123456789@qq.com
+    password: 987654321
+    default-encoding: UTF-8
+    #邮件 SSL Config 阿里云服务器发送需要配置
+    port: 465
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+        socketFactory:
+          port: 465
+          class: javax.net.ssl.SSLSocketFactory
+#以谁来发送邮件
+mail.fromMail.addr: 123456789@qq.com
+
 #mybatis
 mybatis:
     type-aliases-package: com.hope.model.bean
@@ -111,3 +130,4 @@ upyun:
 hope:
     work-dir: ${user.home}/.hope/${spring.profiles.active}/
     server-host-ip:
+
