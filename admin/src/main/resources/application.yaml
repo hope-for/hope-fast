@@ -89,6 +89,11 @@ mail.fromMail.addr: 123456789@qq.com
 mybatis:
     type-aliases-package: com.hope.model.bean
     mapper-locations: classpath:mapper/*.xml
+#mybatis plus
+mybatis-plus:
+  configuration:
+    #是否启用驼峰命名
+    map-underscore-to-camel-case: true
 
 #日志
 logging:
