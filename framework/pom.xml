@@ -11,7 +11,6 @@
     <name>${project.artifactId}</name>
     <description>框架代码</description>
 
-    <!--父-->
     <parent>
         <groupId>com.hope</groupId>
         <artifactId>hope-fast</artifactId>

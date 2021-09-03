@@ -1,4 +1,4 @@
-${AnsiColor.YELLOW}Hello,Welcome to hope-fast...${AnsiColor.RED}Sprin${AnsiColor.BRIGHT_YELLOW}gBoot的${AnsiColor.BRIGHT_GREEN}版本号:${AnsiColor.RED}${AnsiColor.MAGENTA} ${spring-boot.formatted-version} ${AnsiColor.BRIGHT_YELLOW}低调${AnsiColor.BRIGHT_GREEN}小熊猫:${AnsiColor.RED}https://github.com/java-aodeng${AnsiColor.RED}
+${AnsiColor.YELLOW}Hello,Welcome to hope-fast...${AnsiColor.RED}Sprin${AnsiColor.BRIGHT_YELLOW}gBoot的${AnsiColor.BRIGHT_GREEN}版本号:${AnsiColor.RED}${AnsiColor.MAGENTA} ${spring-boot.formatted-version} ${AnsiColor.BRIGHT_YELLOW}低调${AnsiColor.BRIGHT_GREEN}小熊猫:${AnsiColor.RED}${AnsiColor.RED}
 
 
                                    __    __    ______   .______    _______

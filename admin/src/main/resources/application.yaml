@@ -21,9 +21,9 @@ spring:
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://${hope.server-host-ip}:3306/yt-devicedb-test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-      username: root
-      password: root
+      url: jdbc:mysql://${hope.server-host-ip}:3306/?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      username:
+      password:
       # 连接池
       hikari:
         #连接池名
@@ -69,8 +69,8 @@ spring:
   #发送电子邮件服务配置 账号，密码修改
   mail:
     host: smtp.qq.com
-    username: 123456789@qq.com
-    password: 987654321
+    username:
+    password:
     default-encoding: UTF-8
     #邮件 SSL Config 阿里云服务器发送需要配置
     port: 465
@@ -83,7 +83,7 @@ spring:
           port: 465
           class: javax.net.ssl.SSLSocketFactory
 #以谁来发送邮件
-mail.fromMail.addr: 123456789@qq.com
+mail.fromMail.addr:
 
 #mybatis
 mybatis:
@@ -124,15 +124,17 @@ justauth:
 
 #又拍云配置：空间名称，操作员名称，操作员密码，图片上传路径，其他文件上传路径，域名，协议
 upyun:
-  BUCKET_NAME: ddxxm-aodeng
-  OPERATOR_NAME: aodeng
+  BUCKET_NAME:
+  OPERATOR_NAME:
   OPERATOR_PWD:
-  YP_IMAGE_PATH: /image/
-  YP_FILE_PATH: /file/
-  YP_DOMAN: ddxxm-aodeng.test.upcdn.net
+  YP_IMAGE_PATH:
+  YP_FILE_PATH:
+  YP_DOMAN:
   YP_PROTOCOL: http://
 
 hope:
-    work-dir: ${user.home}/.hope/${spring.profiles.active}/
-    server-host-ip: 127.0.0.1
+  #自定义工作目录
+  work-dir: ${user.home}/.hope/${spring.profiles.active}/
+  #自定义服务地址
+  server-host-ip: 127.0.0.1
 

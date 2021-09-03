@@ -35,6 +35,6 @@ layer.ready(function () {
         });
     }
 
-    console.log('欢迎使用hope-fast 感谢您的支持。如果您在使用的过程中有碰到问题，可以联系我qq:2696284032 低调小熊猫：https://github.com/java-aodeng');
+    console.log('欢迎使用hope-fast 感谢您的支持。如果您在使用的过程中有碰到问题，可以联系我qq:2696284032 ');
 
 });
