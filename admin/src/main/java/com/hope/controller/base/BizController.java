@@ -32,7 +32,8 @@ public class BizController {
     @ExceptionHandler(value = CustomException.class)
     @ResponseBody
     public AjaxResult biz(HttpServletRequest req, Exception e) {
-        logger.error("发生自定义业务异常！\n原因是：{}", e.getMessage() + "-[具体原因查看下面详细打印]");
+        logger.error("发生自定义业务异常！\n原因是：[{}",
+                e.getMessage() + "]-[具体原因查看下面详细打印,当前时间是:" + DateUtil.date() + "]");
         e.printStackTrace();
         return AjaxResult.error(HttpStatus.BAD_REQUEST, e.getMessage());
     }
@@ -43,7 +44,8 @@ public class BizController {
     @ExceptionHandler(value = TokenException.class)
     @ResponseBody
     public AjaxResult biz1(HttpServletRequest req, Exception e) {
-        logger.error("发生Token校验异常！\n原因是：{}", e.getMessage() + "-[具体原因查看下面详细打印]");
+        logger.error("发生Token校验异常！\n原因是：[{}",
+                e.getMessage() + "]-[具体原因查看下面详细打印,当前时间是:" + DateUtil.date() + "]");
         e.printStackTrace();
         return AjaxResult.error(HttpStatus.UNAUTHORIZED, e.getMessage());
     }
