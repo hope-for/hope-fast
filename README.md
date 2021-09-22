@@ -12,10 +12,10 @@
 
 ### 快速上手：
 
-- 1.创建一个数据库，修改flyway模块的FlywayApplication.java main代码 配置数据库地址 运行该模块
-- 2.修改admin模块各项配置，开始开发
- 
-### 包含功能、版本信息：
+- 第一步：创建一个数据库，名字自定义，找到flyway模块的FlywayApplication.java文件，修改数据库连接参数，运行成功后关闭，刷新数据库
+- 第二步：找到admin模块application.yaml文件，修改各项配置参数，开始开发
+
+### 包含功能、版本信息、在线文档：
 
 - magic-api 接口快速开发框架 版本：1.4.5 文档：https://www.ssssssss.org/magic-api 
 - SpringBoot框架版本：2.1.8.RELEASE
