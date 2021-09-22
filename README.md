@@ -1,8 +1,21 @@
-快速上手：
-1.创建一个数据库，修改flyway模块的FlywayApplication.java main代码 配置数据库地址 运行该模块
-2.修改admin模块各项配置，开始开发
+<h1 align="center"><a href="https://github.com/java-aodeng" target="_blank">hope-fast</a></h1>
+
+> 简介：快速开发
+
+<p align="center">
+<a href="https://github.com/java-aodeng"><img alt="Author" src="https://img.shields.io/badge/author-%E4%BD%8E%E8%B0%83%E5%B0%8F%E7%86%8A%E7%8C%AB-blue.svg"/></a>
+<a href="https://jq.qq.com/?_wv=1027&k=574chhz"><img alt="QQ群" src="https://img.shields.io/badge/chat-%E4%BD%8E%E8%B0%83%E5%B0%8F%E7%86%8A%E7%8C%ABQQ%E7%BE%A4-yellow.svg"/></a>
+<a href="https://t.me/joinchat/LSsyBxVKLGEkF5MtIhg6TQ"><img alt="Telegram" src="https://img.shields.io/badge/telegram-%E4%BD%8E%E8%B0%83%E5%B0%8F%E7%86%8A%E7%8C%AB--%E5%AE%98%E6%96%B9%E9%83%A8%E8%90%BD-orange.svg"/></a>
+</p>
+
+------------------------------
+
+### 快速上手：
+
+- 1.创建一个数据库，修改flyway模块的FlywayApplication.java main代码 配置数据库地址 运行该模块
+- 2.修改admin模块各项配置，开始开发
  
-包含功能、版本信息：
+### 包含功能、版本信息：
 
 - magic-api 接口快速开发框架 版本：1.4.5 文档：https://www.ssssssss.org/magic-api 
 - SpringBoot框架版本：2.1.8.RELEASE
@@ -80,19 +93,3 @@
             </select>
 
     </details>
-    
-<h1 align="center"><a href="https://github.com/java-aodeng" target="_blank">hope-fast</a></h1>
-
-> 简介：快速开发
-
-<p align="center">
-<a href="https://github.com/java-aodeng"><img alt="Author" src="https://img.shields.io/badge/author-%E4%BD%8E%E8%B0%83%E5%B0%8F%E7%86%8A%E7%8C%AB-blue.svg"/></a>
-<a href="https://jq.qq.com/?_wv=1027&k=574chhz"><img alt="QQ群" src="https://img.shields.io/badge/chat-%E4%BD%8E%E8%B0%83%E5%B0%8F%E7%86%8A%E7%8C%ABQQ%E7%BE%A4-yellow.svg"/></a>
-<a href="https://t.me/joinchat/LSsyBxVKLGEkF5MtIhg6TQ"><img alt="Telegram" src="https://img.shields.io/badge/telegram-%E4%BD%8E%E8%B0%83%E5%B0%8F%E7%86%8A%E7%8C%AB--%E5%AE%98%E6%96%B9%E9%83%A8%E8%90%BD-orange.svg"/></a>
-</p>
-
-------------------------------
-
-### 开源协议
-
-hope-fast 使用  MIT 协议开源
