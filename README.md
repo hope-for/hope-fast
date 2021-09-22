@@ -12,8 +12,10 @@
 
 ### 快速上手：
 
-- 第一步：创建一个数据库，名字自定义，找到flyway模块的FlywayApplication.java文件，修改数据库连接参数，运行成功后关闭，刷新数据库
-- 第二步：找到admin模块application.yaml文件，修改各项配置参数，开始开发
+- 第一步：
+> 创建一个数据库，名字自定义，找到flyway模块的FlywayApplication.java文件，修改数据库连接参数，运行成功后关闭，刷新数据库
+- 第二步：
+> 找到admin模块application.yaml文件，修改各项配置参数，开始开发
 
 ### 包含功能、版本信息、在线文档：
 
