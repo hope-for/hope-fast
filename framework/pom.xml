@@ -89,5 +89,10 @@
             <groupId>net.sf.image4j</groupId>
             <artifactId>image4j</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.ssssssss</groupId>
+            <artifactId>magic-api-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 </project>

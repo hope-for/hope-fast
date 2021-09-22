@@ -170,6 +170,19 @@
                 <version>2.5.3</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>7.0.0</version>
+            </dependency>
+
+            <!-- 以spring-boot-starter的方式引用 -->
+            <dependency>
+                <groupId>org.ssssssss</groupId>
+                <artifactId>magic-api-spring-boot-starter</artifactId>
+                <version>1.4.5</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -199,6 +212,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-
     </dependencies>
 </project>

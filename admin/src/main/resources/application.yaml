@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8090
   tomcat:
       uri-encoding: utf-8
       #指定文件上传服务器临时目录，避免服务器自动清理目录的问题 “.”表示项目启动目录
@@ -26,9 +26,9 @@ spring:
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://${hope.server-host-ip}:3306/?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-      username:
-      password:
+      url: jdbc:mysql://${hope.server-host-ip}:3306/hope-fast?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      username: root
+      password: 123456
       # 连接池
       hikari:
         #连接池名
@@ -143,3 +143,9 @@ hope:
   #自定义服务地址
   server-host-ip: 127.0.0.1
 
+#配置web页面入口
+magic-api:
+  web: /magic/web
+#配置文件存储位置。当以classpath开头时，为只读模式
+  resource:
+    location: /data/magic-api

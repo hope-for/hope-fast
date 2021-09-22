@@ -1,20 +1,20 @@
 包含功能、版本信息：
 
-- springboot框架版本：2.1.8.RELEASE
-- 没有权限依赖，没有过度封装，内置hplus前端ui框架，却丝毫不影响前后端分离
-- 主流rest/restful风格接口，全局异常，验证码，excel导出，FTP文件上传,文件上传本地存储等基础功能
-- 数据库变更版本控制工具flyway
-- 工具类库hutool 版本：5.6.5
-- mybatis-plus 版本：3.4.3
+- SpringBoot框架版本：2.1.8.RELEASE
+- 没有权限依赖，没有过度封装，内置Hplus前端Ui框架，却丝毫不影响前后端分离
+- 主流rest/restful风格接口，全局异常，验证码，Excel导出，FTP文件上传,文件上传本地存储等基础功能
+- 数据库变更版本控制工具Flyway 版本：7.0.0
+- 工具类库Hutool 版本：5.6.5
+- Mybatis-Plus 版本：3.4.3
 - 第三方授权登录的工具类库JustAuth
 - 阿里云短信接口
-- 微信相关：根据code获取微信小程序用户openid，session_key 解密小程序用户手机号
-- 优雅关闭 Spring Boot 应用，内置 tomcat 配置优化
+- 微信相关：根据Code获取微信小程序用户openid，session_key 解密小程序用户手机号
+- 优雅关闭 Spring Boot 应用，内置 Tomcat 配置优化
 - 又拍云附件上传，附件删除 SDK版本：4.2.3
 - SpringBoot默认的连接池 HikariCP（史上最快？）
 - Token校验拦截器
 - 切面自定义注解 @Log 操作日志收集记录，日常开发非常方便  AOP版本：2.5.3
-- 邮件发送，发送文本邮件，html邮件，附件邮件，邮件发送excel附件
+- 邮件发送，发送文本邮件，Html邮件，附件邮件，邮件发送Excel附件
 - 数据库主键设置GUID Mybatis调用存储过程 
     
     <details>   
