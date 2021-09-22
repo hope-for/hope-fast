@@ -1,12 +1,11 @@
-#hope数据库
 SET FOREIGN_KEY_CHECKS=0;
 
-#magic_api接口文件保存表
+#magic_api接口生成文件保存表
 CREATE TABLE `magic_api_file` (
   `file_path` varchar(512) NOT NULL,
   `file_content` mediumtext,
   PRIMARY KEY (`file_path`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='magic_api接口生成文件保存表';
 
 #用户信息表
 CREATE TABLE `sys_user` (
@@ -15,6 +14,7 @@ CREATE TABLE `sys_user` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户信息表';
 
+#初始数据
 INSERT INTO `magic_api_file` VALUES ('/magic-api/api/', 'this is directory');
 INSERT INTO `magic_api_file` VALUES ('/magic-api/api/用户模块/', 'this is directory');
 INSERT INTO `magic_api_file` VALUES ('/magic-api/api/用户模块/group.json', '{\r\n  \"properties\" : { },\r\n  \"id\" : \"f39af6ff09334f61a1477106c778ff9d\",\r\n  \"name\" : \"用户模块\",\r\n  \"type\" : \"1\",\r\n  \"parentId\" : \"0\",\r\n  \"path\" : \"/sysUser\",\r\n  \"paths\" : [ ],\r\n  \"options\" : [ ]\r\n}');
