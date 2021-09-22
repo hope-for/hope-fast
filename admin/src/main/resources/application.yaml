@@ -148,4 +148,7 @@ magic-api:
   web: /magic/web
 #配置文件存储位置。当以classpath开头时，为只读模式
   resource:
-    location: /data/magic-api
+    type: database # 配置存储在数据库中
+    tableName: magic_api_file # 数据库中的表名
+    prefix: /magic-api # key前缀
+    readonly: false # 是否是只读模式
