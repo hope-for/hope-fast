@@ -183,6 +183,13 @@
                 <version>1.4.5</version>
             </dependency>
 
+            <!-- mybatis-plus-generator -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>3.4.1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

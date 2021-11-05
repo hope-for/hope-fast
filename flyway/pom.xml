@@ -17,6 +17,7 @@
 	</parent>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -26,5 +27,6 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>
+
 	</dependencies>
 </project>
