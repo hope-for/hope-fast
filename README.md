@@ -19,8 +19,9 @@
 
 ### 包含功能、版本信息、在线文档：
 
-- magic-api 接口快速开发框架 版本：1.4.5 文档：https://www.ssssssss.org/magic-api 
 - SpringBoot框架版本：2.1.8.RELEASE
+- EasyPoi工具类，（Excel模板导出，体验非常nice） 版本：4.0.0 文档：http://easypoi.mydoc.io/#text_226078
+- magic-api 接口快速开发框架 版本：1.4.5 文档：https://www.ssssssss.org/magic-api 
 - 没有权限依赖，没有过度封装，内置Hplus前端Ui框架，却丝毫不影响前后端分离
 - 主流rest/restful风格接口，全局异常，验证码，Excel导出，FTP文件上传,文件上传本地存储等基础功能
 - 数据库变更版本控制工具Flyway 版本：7.0.0
@@ -35,7 +36,6 @@
 - Token校验拦截器
 - 切面自定义注解 @Log 操作日志收集记录，日常开发非常方便  AOP版本：2.5.3
 - 邮件发送，发送文本邮件，Html邮件，附件邮件，邮件发送Excel附件
-- EasyPoi工具类，（Excel模板导出，体验非常nice） 版本：4.0.0 文档：http://easypoi.mydoc.io/#text_226078
 - 数据库主键设置GUID Mybatis调用存储过程     
     <details>   
         <summary>
