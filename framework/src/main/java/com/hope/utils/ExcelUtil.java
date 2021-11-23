@@ -5,18 +5,18 @@ import com.hope.annotation.Excel.ColumnType;
 import com.hope.annotation.Excel.Type;
 import com.hope.annotation.Excels;
 import com.hope.utils.text.Convert;
-import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddressList;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
-import org.apache.poi.xssf.usermodel.*;
-import org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTMarker;
+import org.apache.poi.xssf.usermodel.XSSFDataValidation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
@@ -728,7 +728,7 @@ public class ExcelUtil<T> {
         return val;
     }
 
-    public static Map<String, XSSFPictureData> readExcelFileApache(String filePath) throws Exception {
+    /*public static Map<String, XSSFPictureData> readExcelFileApache(String filePath) throws Exception {
         String fileType = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length());
         InputStream stream = new FileInputStream(filePath);
         Workbook wb = new XSSFWorkbook(stream);
@@ -763,7 +763,7 @@ public class ExcelUtil<T> {
         }
 
         return map;
-    }
+    }*/
 
 /*    public static void main(String[] args) {
         try {

@@ -22,6 +22,8 @@ spring:
     name: hope-admin
   profiles:
     active: dev
+  main:
+    allow-bean-definition-overriding: true
   #数据库配置
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
@@ -87,6 +89,7 @@ spring:
         socketFactory:
           port: 465
           class: javax.net.ssl.SSLSocketFactory
+
 #以谁来发送邮件
 mail.fromMail.addr:
 
@@ -94,6 +97,7 @@ mail.fromMail.addr:
 mybatis:
     type-aliases-package: com.hope.model.bean
     mapper-locations: classpath:mapper/*.xml
+
 #mybatis plus
 mybatis-plus:
   configuration:

@@ -35,8 +35,8 @@
 - Token校验拦截器
 - 切面自定义注解 @Log 操作日志收集记录，日常开发非常方便  AOP版本：2.5.3
 - 邮件发送，发送文本邮件，Html邮件，附件邮件，邮件发送Excel附件
-- 数据库主键设置GUID Mybatis调用存储过程 
-    
+- EasyPoi工具类，（Excel模板导出，体验非常nice） 版本：4.0.0 文档：http://easypoi.mydoc.io/#text_226078
+- 数据库主键设置GUID Mybatis调用存储过程     
     <details>   
         <summary>
             <b>存储过程 数据库配置：</b>
