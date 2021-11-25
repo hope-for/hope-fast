@@ -151,36 +151,25 @@
 │  │      │          ├─filter
 │  │      │          │      HopeMvcConfig.java              -- 访问映射配置
 │  │      │          │      TokenCheckFilter.java           -- Token校验拦截
-│  │      │          │
 │  │      │          ├─handler
 │  │      │          │  ├─cache
 │  │      │          │  │      RedisHandler.java            -- redis 处理程序
-│  │      │          │  │
 │  │      │          │  ├─email
 │  │      │          │  │      EmailHandler.java    
 │  │      │          │  │      SendEmailHandler.java        -- 邮件发送处理程序
-│  │      │          │  │
 │  │      │          │  ├─file
 │  │      │          │  │      FileHandler.java
 │  │      │          │  │      UpOssFileHandler.java        -- Up oss file handler.
-│  │      │          │  │
 │  │      │          │  ├─log
 │  │      │          │  │      LogAspectHandler.java        -- 注解@Log操作日志记录处理程序
-│  │      │          │  │
 │  │      │          │  ├─sms
 │  │      │          │  │      AliSmsHandler.java           -- 阿里云短信服务
-│  │      │          │  │
 │  │      │          │  ├─validate
 │  │      │          │  │      ValidateCodeHandler.java     -- 图片验证码工具实现类
-│  │      │          │  │
 │  │      │          │  └─wechat
 │  │      │          │          WeChatHandler.java          -- 微信开发工具实现类
 │  │      │          │
 │  │      │          ├─mapper
-│  │      │          │      GetIDMapper.java
-│  │      │          │      SysUserMapper.java
-│  │      │          │      TmConfigMapper.java
-│  │      │          │
 │  │      │          ├─model
 │  │      │          │  ├─bean
 │  │      │          │  ├─dto
@@ -191,21 +180,15 @@
 │  │      │              └─impl
 │  │      └─resources
 │  │          └─mapper
-│  │                  GetIDMapper.xml                       --  调用存储过程获取id .xml
-│  │                  SysUserMapper.xml
 │  │
-├─docs                                                      -- 项目附件
-│      专项支出用款申请书_map.xls                          
-│
+├─docs                                                      -- 项目附件                       
 ├─flyway                                                    -- 数据库版本管理模块
-│  │
 │  └─src
 │      └─main
 │          ├─java
 │          │  └─com
 │          │      └─hope
 │          │              FlywayApplication.java
-│          │
 │          └─resources
 │              └─db
 │                  └─migration
@@ -213,66 +196,14 @@
 │
 └─framework                                                  -- 框架模块
     │  pom.xml
-    │
     ├─src
     │  └─main
     │      └─java
     │          └─com
     │              └─hope
-    │                  ├─annotation                             
-    │                  │      Log.java      
-    │                  │
+    │                  ├─annotation                                 
     │                  ├─config
-    │                  │      CustomShutdownConfig.java
-    │                  │      FastJson2JsonRedisSerializer.java
-    │                  │      KaptchaConfig.java
-    │                  │      KaptchaTextCreator.java
-    │                  │      MybatisPlusConfig.java
-    │                  │      RedisConfig.java
-    │                  │      WebMvcConfig.java
-    │                  │
     │                  ├─exception
-    │                  │  │  BaseException.java
-    │                  │  │  CaptchaException.java
-    │                  │  │  CustomException.java
-    │                  │  │  FileOperationException.java
-    │                  │  │  ImageFormatException.java
-    │                  │  │  TokenException.java
-    │                  │  │
-    │                  │  └─file
-    │                  │          FileException.java
-    │                  │          FileNameLengthLimitExceededException.java
-    │                  │          FileSizeLimitExceededException.java
-    │                  │          InvalidExtensionException.java
-    │                  │
     │                  ├─support
-    │                  │      AttachmentTypeEnum.java
-    │                  │      BusinessType.java
-    │                  │      HopeConst.java
-    │                  │      HttpStatus.java
-    │                  │      OperatorType.java
-    │                  │      ResponseStatusEnum.java
-    │                  │      ValueEnum.java
-    │                  │
     │                  └─utils
-    │                      │  AjaxResult.java
-    │                      │  DateUtils.java
-    │                      │  FilenameUtils.java
-    │                      │  FirstCharUtil.java
-    │                      │  ImageUtils.java
-    │                      │  Md5Utils.java
-    │                      │  ReflectUtils.java
-    │                      │  StringUtils.java
-    │                      │
-    │                      ├─file
-    │                      │      FileUploadUtils.java
-    │                      │      FileUtils.java
-    │                      │      FtpUtils.java
-    │                      │      MimeTypeUtils.java
-    │                      │
-    │                      └─text
-    │                              CharsetKit.java
-    │                              Convert.java
-    │                              StrFormatter.java
-    │                                  
-```
+ ```
