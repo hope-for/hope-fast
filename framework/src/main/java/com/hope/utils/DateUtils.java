@@ -3,9 +3,13 @@ package com.hope.utils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.lang.management.ManagementFactory;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 时间工具类
@@ -131,5 +135,69 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         // 计算差多少秒//输出结果
         // long sec = diff % nd % nh % nm / ns;
         return day + "天" + hour + "小时" + min + "分钟";
+    }
+
+    /**
+     * 获取一个时间段内天数
+     * @param	cntDateBeg 开始时间
+     * @param	cntDateEnd 结束时间
+     * @param	format 返回格式 MM-dd MMdd
+     * @return java.util.List<java.lang.String>
+     */
+    public static List<String> getDayBetween(String cntDateBeg, String cntDateEnd,String format) {
+        //去掉时间字符存在空格的问题
+        cntDateBeg=cntDateBeg.trim();
+        cntDateEnd=cntDateEnd.trim();
+        List<String> list = new ArrayList<>();
+        String[] dateBegs = cntDateBeg.split("-");
+        String[] dateEnds = cntDateEnd.split("-");
+        Calendar start = Calendar.getInstance();
+        start.set(Integer.valueOf(dateBegs[0]), Integer.valueOf(dateBegs[1]) - 1, Integer.valueOf(dateBegs[2]));
+        Long startTIme = start.getTimeInMillis();
+        Calendar end = Calendar.getInstance();
+        end.set(Integer.valueOf(dateEnds[0]), Integer.valueOf(dateEnds[1]) - 1, Integer.valueOf(dateEnds[2]));
+        Long endTime = end.getTimeInMillis();
+        Long oneDay = 1000 * 60 * 60 * 24l;
+        Long time = startTIme;
+        while (time <= endTime) {
+            Date d = new Date(time);
+            DateFormat df = new SimpleDateFormat(format);
+            time += oneDay;
+            list.add(df.format(d));
+        }
+        return list;
+    }
+
+
+    /**
+     * 获取一个时间范围内月份
+     * @param	startDate
+     * @param	endDate
+     * @param	format	返回格式 yyyy-MM yyyyMM
+     * @return java.util.List<java.lang.String>
+     */
+    public static List<String> getMonthBetween(String startDate, String endDate, String format) {
+        ArrayList<String> result = new ArrayList<String>();
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(format);//格式化为年月
+
+            Calendar min = Calendar.getInstance();
+            Calendar max = Calendar.getInstance();
+            min.setTime(sdf.parse(startDate));
+            min.set(min.get(Calendar.YEAR), min.get(Calendar.MONTH), 1);
+
+            max.setTime(sdf.parse(endDate));
+            max.set(max.get(Calendar.YEAR), max.get(Calendar.MONTH), 2);
+
+            Calendar curr = min;
+            while (curr.before(max)) {
+                result.add(sdf.format(curr.getTime()));
+                curr.add(Calendar.MONTH, 1);
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }

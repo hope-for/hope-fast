@@ -2,7 +2,6 @@ package com.hope.model.bean;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.hope.annotation.Excel;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,7 +13,6 @@ import java.util.Map;
  *
  * @author aodeng
  */
-
 public class BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -35,7 +33,6 @@ public class BaseEntity implements Serializable {
      * 创建时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Excel(name = "报修时间")
     private Date createTime;
 
     /**
