@@ -100,7 +100,6 @@
 ### 项目目录
 ```
 │  pom.xml 父工程依赖：用来整个项目的依赖版本管理
-│  README.md
 │
 ├─admin                                                     -- admin模块 依赖于core模块
 │  │  pom.xml 
@@ -111,7 +110,6 @@
 │  │      │  └─com
 │  │      │      └─hope
 │  │      │          │  AdminApplication.java               -- admin服务启动入口
-│  │      │          │
 │  │      │          └─controller
 │  │      │              ├─base
 │  │      │              │      BizController.java          -- 全局异常控制器
@@ -121,28 +119,16 @@
 │  │      │              │      KaptchaController.java      -- 验证码控制器
 │  │      │              │      OauthController.java        -- 授权认证控制器
 │  │      │              │      WeChatController.java       -- 微信相关控制器
-│  │      │              │
 │  │      │              ├─generator
 │  │      │              │      CodeGenerator.java          -- 全局异常控制器
-│  │      │              │
-│  │      │              └─test
-│  │      │                      Singleton.java
-│  │      │                      Test1Controller.java
-│  │      │                      Test2Controller.java
-│  │      │                      TestController.java
-│  │      │
 │  │      └─resources
 │  │          │  application.properties
 │  │          │  application.yaml                           -- 项目配置
 │  │          │  banner.txt
 │  │          │  logback-spring.xml                         -- 日志配置
-│  │          │
-│  │          ├─static
-│
+│  │          ├─static                                      -- 静态资源文件
 ├─core                                                      -- 业务代码模块 依赖于framework模块
-│  │  core.iml
 │  │  pom.xml
-│  │
 │  ├─src
 │  │  └─main
 │  │      ├─java
@@ -168,7 +154,6 @@
 │  │      │          │  │      ValidateCodeHandler.java     -- 图片验证码工具实现类
 │  │      │          │  └─wechat
 │  │      │          │          WeChatHandler.java          -- 微信开发工具实现类
-│  │      │          │
 │  │      │          ├─mapper
 │  │      │          ├─model
 │  │      │          │  ├─bean
@@ -188,7 +173,7 @@
 │          ├─java
 │          │  └─com
 │          │      └─hope
-│          │              FlywayApplication.java
+│          │              FlywayApplication.java            -- flyway启动入口
 │          └─resources
 │              └─db
 │                  └─migration
@@ -201,9 +186,9 @@
     │      └─java
     │          └─com
     │              └─hope
-    │                  ├─annotation                                 
-    │                  ├─config
-    │                  ├─exception
-    │                  ├─support
-    │                  └─utils
+    │                  ├─annotation                         -- 自定义注解        
+    │                  ├─config                             -- 配置文件
+    │                  ├─exception                          -- 自定义异常
+    │                  ├─support                            -- 系统常量
+    │                  └─utils                              -- 工具包
  ```
