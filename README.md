@@ -119,7 +119,7 @@
 │  │      │              │      FileUploadController.java   -- 文件上传控制器
 │  │      │              │      HopeController.java         -- 页面跳转控制器
 │  │      │              │      KaptchaController.java      -- 验证码控制器
-│  │      │              │      OauthController.java        -- 授权认真控制器
+│  │      │              │      OauthController.java        -- 授权认证控制器
 │  │      │              │      WeChatController.java       -- 微信相关控制器
 │  │      │              │
 │  │      │              ├─generator
