@@ -84,6 +84,32 @@
                 END
                 ;;
                 DELIMITER ;
+                
+                -- 出现转义的错误就执行下面这个
+              DROP PROCEDURE IF EXISTS `GetID2`;
+
+              CREATE PROCEDURE `GetID2`(IN TableName VARCHAR(100),OUT TableID VARCHAR(36))
+              BEGIN
+              DECLARE s_Ident VARCHAR(20);
+              DECLARE s_Fill VARCHAR(1);
+              DECLARE s_Type VARCHAR(3);
+              DECLARE s_Date VARCHAR(16);
+              DECLARE s_Head VARCHAR(10);
+              DECLARE s_ID VARCHAR(20);
+              DECLARE d_Date datetime;
+
+              select PCI_Date into d_Date from PB_Code_Ident Where PCI_Table = TableName;
+              if(REPLACE(DATE_FORMAT(d_Date,'%Y/%m/%d'),'-','/')=REPLACE(curdate(),'-','/')) THEN
+              SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+              update PB_Code_Ident set PCI_Identity = PCI_Identity + 1 Where PCI_Table = TableName;
+              else
+              SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+              update PB_Code_Ident set PCI_Identity = PCI_Default,PCI_Date=REPLACE(curdate(),'-','/') Where PCI_Table = TableName;
+              end if;
+              select PCI_Identity,PCI_Head into s_ID,s_Head from PB_Code_Ident Where PCI_Table = TableName;
+              set @TableID = concat(s_Head,REPLACE(curdate(),'-',''),s_ID);
+              select @TableID INTO TableID;
+              END
 
         3、MyBatis调用
 
